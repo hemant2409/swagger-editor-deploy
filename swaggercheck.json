@@ -1,0 +1,75 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+
+        "/v1/admin/ai-ncert/subjects": {
+            "get": {
+              "operationId": "AdminSubjectController_listSubjects",
+              "summary": "List all Subjects with pagination",
+              "parameters": [
+                {
+                  "name": "page",
+                  "required": false,
+                  "in": "query",
+                  "description": "Page number",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "limit",
+                  "required": false,
+                  "in": "query",
+                  "description": "Items per page",
+                  "schema": {
+                    "type": "number"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "List of subjects retrieved successfully.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              },
+              "tags": [
+                "AI_NCERT Admin Subjects"
+              ]
+            }
+          }
+    },
+    "info": {
+      "title": "common-engagement",
+      "description": "common-engagement",
+      "version": "1.0",
+      "contact": {
+  
+      }
+    },
+    "tags": [],
+    "servers": [
+      {
+        "url": "https://stage-api.penpencil.co"
+      }
+    ],
+    "components": {
+  "securitySchemes": {
+    "BearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
+    }
+  }
+},
+"security": [
+  {
+    "BearerAuth": []
+  }
+]
+  }
